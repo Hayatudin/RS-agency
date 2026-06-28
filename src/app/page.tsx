@@ -61,6 +61,9 @@ function AnimatedCounter({ target, suffix = '', duration = 2000 }: { target: num
 }
 
 export default function Home() {
+  // Services hover state
+  const [hoveredService, setHoveredService] = useState<number | null>(null);
+
   // About Us Tab state
   const [aboutTab, setAboutTab] = useState<'vision' | 'mission'>('vision');
 
@@ -180,7 +183,7 @@ export default function Home() {
       <section id="home" className="relative min-h-[100vh] flex items-end overflow-hidden -mt-24">
         {/* Background Image */}
         <Image
-          src="/hero.jpeg"
+          src="/Hero.jpeg"
           alt="RS Agency Global Operations"
           fill
           sizes="100vw"
@@ -869,35 +872,57 @@ export default function Home() {
             
             {/* SVG Connecting Lines (desktop lg viewport only) */}
             <svg className="absolute inset-0 w-full h-full pointer-events-none z-0 hidden lg:block" viewBox="0 0 1200 600" fill="none">
-              {/* Central Concentric Ring Guides */}
-              <circle cx="600" cy="260" r="145" stroke="rgba(59, 130, 246, 0.12)" strokeWidth="1" strokeDasharray="4 4" />
-              <circle cx="600" cy="260" r="115" stroke="rgba(59, 130, 246, 0.18)" strokeWidth="1" />
               
               {/* Lines from left cards to circle */}
               {/* Card 1 (Top Left) to circle */}
               <path d="M 380 140 L 440 140 L 510 200" stroke="#E2E8F0" strokeWidth="2" />
-              <path d="M 380 140 L 440 140 L 510 200" stroke="#2563eb" strokeWidth="2" className="animate-dash-pulse hidden group-hover/c1:block" id="line-c1" />
+              <path 
+                d="M 380 140 L 440 140 L 510 200" 
+                stroke="#2563eb" 
+                strokeWidth="2" 
+                className={`animate-dash-pulse transition-opacity duration-300 ${hoveredService === 0 ? 'opacity-100' : 'opacity-0'}`} 
+              />
               <circle cx="510" cy="200" r="5.5" fill="#3b82f6" stroke="white" strokeWidth="1.5" />
 
               {/* Card 2 (Bottom Left) to circle */}
               <path d="M 380 380 L 440 380 L 510 320" stroke="#E2E8F0" strokeWidth="2" />
-              <path d="M 380 380 L 440 380 L 510 320" stroke="#2563eb" strokeWidth="2" className="animate-dash-pulse hidden group-hover/c2:block" id="line-c2" />
+              <path 
+                d="M 380 380 L 440 380 L 510 320" 
+                stroke="#2563eb" 
+                strokeWidth="2" 
+                className={`animate-dash-pulse transition-opacity duration-300 ${hoveredService === 1 ? 'opacity-100' : 'opacity-0'}`} 
+              />
               <circle cx="510" cy="320" r="5.5" fill="#3b82f6" stroke="white" strokeWidth="1.5" />
 
               {/* Lines from right cards to circle */}
               {/* Card 3 (Top Right) to circle */}
               <path d="M 820 140 L 760 140 L 690 200" stroke="#E2E8F0" strokeWidth="2" />
-              <path d="M 820 140 L 760 140 L 690 200" stroke="#2563eb" strokeWidth="2" className="animate-dash-pulse hidden group-hover/c3:block" id="line-c3" />
+              <path 
+                d="M 820 140 L 760 140 L 690 200" 
+                stroke="#2563eb" 
+                strokeWidth="2" 
+                className={`animate-dash-pulse transition-opacity duration-300 ${hoveredService === 2 ? 'opacity-100' : 'opacity-0'}`} 
+              />
               <circle cx="690" cy="200" r="5.5" fill="#3b82f6" stroke="white" strokeWidth="1.5" />
 
               {/* Card 4 (Bottom Right) to circle */}
               <path d="M 820 380 L 760 380 L 690 320" stroke="#E2E8F0" strokeWidth="2" />
-              <path d="M 820 380 L 760 380 L 690 320" stroke="#2563eb" strokeWidth="2" className="animate-dash-pulse hidden group-hover/c4:block" id="line-c4" />
+              <path 
+                d="M 820 380 L 760 380 L 690 320" 
+                stroke="#2563eb" 
+                strokeWidth="2" 
+                className={`animate-dash-pulse transition-opacity duration-300 ${hoveredService === 3 ? 'opacity-100' : 'opacity-0'}`} 
+              />
               <circle cx="690" cy="320" r="5.5" fill="#3b82f6" stroke="white" strokeWidth="1.5" />
 
               {/* Card 5 (Bottom Center) to circle */}
               <path d="M 600 480 L 600 375" stroke="#E2E8F0" strokeWidth="2" />
-              <path d="M 600 480 L 600 375" stroke="#2563eb" strokeWidth="2" className="animate-dash-pulse hidden group-hover/c5:block" id="line-c5" />
+              <path 
+                d="M 600 480 L 600 375" 
+                stroke="#2563eb" 
+                strokeWidth="2" 
+                className={`animate-dash-pulse transition-opacity duration-300 ${hoveredService === 4 ? 'opacity-100' : 'opacity-0'}`} 
+              />
               <circle cx="600" cy="375" r="5.5" fill="#3b82f6" stroke="white" strokeWidth="1.5" />
             </svg>
 
@@ -908,22 +933,16 @@ export default function Home() {
               <div className="lg:col-span-4 flex flex-col gap-12 lg:pr-8">
                 {/* Service 1 */}
                 <div 
-                  className="bg-brand-light/40 hover:bg-white rounded-3xl p-6 border border-gray-100 hover:border-brand-blue/30 shadow-sm hover:shadow-lg transition-all duration-300 relative group/c1 cursor-pointer"
-                  onMouseEnter={() => {
-                    if (typeof window !== 'undefined') {
-                      const el = document.getElementById('line-c1');
-                      if (el) el.style.display = 'block';
-                    }
-                  }}
-                  onMouseLeave={() => {
-                    if (typeof window !== 'undefined') {
-                      const el = document.getElementById('line-c1');
-                      if (el) el.style.display = 'none';
-                    }
-                  }}
+                  className={`rounded-3xl p-6 border transition-all duration-300 relative group/c1 cursor-pointer ${
+                    hoveredService === 0 ? 'bg-white border-brand-blue/30 shadow-lg' : 'bg-brand-light/40 border-gray-100 shadow-sm'
+                  }`}
+                  onMouseEnter={() => setHoveredService(0)}
+                  onMouseLeave={() => setHoveredService(null)}
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-brand-blue/10 text-brand-blue group-hover/c1:bg-brand-blue group-hover/c1:text-white transition-all duration-300">
+                    <div className={`flex items-center justify-center w-10 h-10 rounded-xl transition-all duration-300 ${
+                      hoveredService === 0 ? 'bg-brand-blue text-white' : 'bg-brand-blue/10 text-brand-blue'
+                    }`}>
                       <Megaphone className="w-5 h-5" />
                     </div>
                     <span className="text-[10px] font-black text-brand-blue bg-brand-blue/5 px-2.5 py-0.5 rounded-full uppercase tracking-wider">Service 01</span>
@@ -938,22 +957,16 @@ export default function Home() {
 
                 {/* Service 2 */}
                 <div 
-                  className="bg-brand-light/40 hover:bg-white rounded-3xl p-6 border border-gray-100 hover:border-brand-blue/30 shadow-sm hover:shadow-lg transition-all duration-300 relative group/c2 cursor-pointer"
-                  onMouseEnter={() => {
-                    if (typeof window !== 'undefined') {
-                      const el = document.getElementById('line-c2');
-                      if (el) el.style.display = 'block';
-                    }
-                  }}
-                  onMouseLeave={() => {
-                    if (typeof window !== 'undefined') {
-                      const el = document.getElementById('line-c2');
-                      if (el) el.style.display = 'none';
-                    }
-                  }}
+                  className={`rounded-3xl p-6 border transition-all duration-300 relative group/c2 cursor-pointer ${
+                    hoveredService === 1 ? 'bg-white border-brand-blue/30 shadow-lg' : 'bg-brand-light/40 border-gray-100 shadow-sm'
+                  }`}
+                  onMouseEnter={() => setHoveredService(1)}
+                  onMouseLeave={() => setHoveredService(null)}
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-brand-blue/10 text-brand-blue group-hover/c2:bg-brand-blue group-hover/c2:text-white transition-all duration-300">
+                    <div className={`flex items-center justify-center w-10 h-10 rounded-xl transition-all duration-300 ${
+                      hoveredService === 1 ? 'bg-brand-blue text-white' : 'bg-brand-blue/10 text-brand-blue'
+                    }`}>
                       <Users className="w-5 h-5" />
                     </div>
                     <span className="text-[10px] font-black text-brand-blue bg-brand-blue/5 px-2.5 py-0.5 rounded-full uppercase tracking-wider">Service 02</span>
@@ -969,13 +982,17 @@ export default function Home() {
 
               {/* Center Column: Concentric Circle Hub */}
               <div className="lg:col-span-4 flex items-center justify-center py-6">
-                <div className="relative flex items-center justify-center w-48 h-48 md:w-52 md:h-52 rounded-full bg-brand-dark text-white border border-brand-blue/20 shadow-xl relative z-10 select-none group">
+                <div className="relative flex items-center justify-center w-48 h-48 md:w-52 md:h-52 rounded-full bg-gradient-to-br from-brand-blue to-indigo-900 text-white border border-brand-blue/30 shadow-xl shadow-brand-blue/10 relative z-10 select-none group">
+                  {/* Outer concentric rings physically centered on the element */}
+                  <div className="absolute -inset-8 rounded-full border border-brand-blue/15 pointer-events-none z-0"></div>
+                  <div className="absolute -inset-16 rounded-full border border-brand-blue/8 border-dashed pointer-events-none z-0"></div>
+
                   {/* Glowing waves */}
-                  <div className="absolute inset-0 rounded-full border border-brand-blue/20 animate-ping pointer-events-none duration-1000"></div>
-                  <div className="absolute -inset-4 rounded-full border border-brand-cyan/15 animate-pulse pointer-events-none"></div>
+                  <div className="absolute inset-0 rounded-full border border-brand-blue/20 animate-ping pointer-events-none duration-1000 z-0"></div>
+                  <div className="absolute -inset-4 rounded-full border border-brand-cyan/15 animate-pulse pointer-events-none z-0"></div>
                   
                   {/* Concentric inner circle */}
-                  <div className="absolute inset-4 rounded-full border border-white/5 flex items-center justify-center bg-white/[0.02]">
+                  <div className="absolute inset-4 rounded-full border border-white/10 flex items-center justify-center bg-white/[0.04] z-10">
                     <div className="text-center p-4">
                       <h4 className="font-black text-lg sm:text-xl tracking-widest text-white">RS</h4>
                       <p className="text-[9px] text-brand-cyan font-bold uppercase tracking-widest mt-1">SERVICES</p>
@@ -988,22 +1005,16 @@ export default function Home() {
               <div className="lg:col-span-4 flex flex-col gap-12 lg:pl-8">
                 {/* Service 3 */}
                 <div 
-                  className="bg-brand-light/40 hover:bg-white rounded-3xl p-6 border border-gray-100 hover:border-brand-blue/30 shadow-sm hover:shadow-lg transition-all duration-300 relative group/c3 cursor-pointer"
-                  onMouseEnter={() => {
-                    if (typeof window !== 'undefined') {
-                      const el = document.getElementById('line-c3');
-                      if (el) el.style.display = 'block';
-                    }
-                  }}
-                  onMouseLeave={() => {
-                    if (typeof window !== 'undefined') {
-                      const el = document.getElementById('line-c3');
-                      if (el) el.style.display = 'none';
-                    }
-                  }}
+                  className={`rounded-3xl p-6 border transition-all duration-300 relative group/c3 cursor-pointer ${
+                    hoveredService === 2 ? 'bg-white border-brand-blue/30 shadow-lg' : 'bg-brand-light/40 border-gray-100 shadow-sm'
+                  }`}
+                  onMouseEnter={() => setHoveredService(2)}
+                  onMouseLeave={() => setHoveredService(null)}
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-brand-blue/10 text-brand-blue group-hover/c3:bg-brand-blue group-hover/c3:text-white transition-all duration-300">
+                    <div className={`flex items-center justify-center w-10 h-10 rounded-xl transition-all duration-300 ${
+                      hoveredService === 2 ? 'bg-brand-blue text-white' : 'bg-brand-blue/10 text-brand-blue'
+                    }`}>
                       <ClipboardCheck className="w-5 h-5" />
                     </div>
                     <span className="text-[10px] font-black text-brand-blue bg-brand-blue/5 px-2.5 py-0.5 rounded-full uppercase tracking-wider">Service 03</span>
@@ -1018,22 +1029,16 @@ export default function Home() {
 
                 {/* Service 4 */}
                 <div 
-                  className="bg-brand-light/40 hover:bg-white rounded-3xl p-6 border border-gray-100 hover:border-brand-blue/30 shadow-sm hover:shadow-lg transition-all duration-300 relative group/c4 cursor-pointer"
-                  onMouseEnter={() => {
-                    if (typeof window !== 'undefined') {
-                      const el = document.getElementById('line-c4');
-                      if (el) el.style.display = 'block';
-                    }
-                  }}
-                  onMouseLeave={() => {
-                    if (typeof window !== 'undefined') {
-                      const el = document.getElementById('line-c4');
-                      if (el) el.style.display = 'none';
-                    }
-                  }}
+                  className={`rounded-3xl p-6 border transition-all duration-300 relative group/c4 cursor-pointer ${
+                    hoveredService === 3 ? 'bg-white border-brand-blue/30 shadow-lg' : 'bg-brand-light/40 border-gray-100 shadow-sm'
+                  }`}
+                  onMouseEnter={() => setHoveredService(3)}
+                  onMouseLeave={() => setHoveredService(null)}
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-brand-blue/10 text-brand-blue group-hover/c4:bg-brand-blue group-hover/c4:text-white transition-all duration-300">
+                    <div className={`flex items-center justify-center w-10 h-10 rounded-xl transition-all duration-300 ${
+                      hoveredService === 3 ? 'bg-brand-blue text-white' : 'bg-brand-blue/10 text-brand-blue'
+                    }`}>
                       <Database className="w-5 h-5" />
                     </div>
                     <span className="text-[10px] font-black text-brand-blue bg-brand-blue/5 px-2.5 py-0.5 rounded-full uppercase tracking-wider">Service 04</span>
@@ -1052,22 +1057,16 @@ export default function Home() {
             {/* Bottom Row: Service 5 centered */}
             <div className="w-full max-w-lg mt-12 relative z-10">
               <div 
-                className="bg-brand-light/40 hover:bg-white rounded-3xl p-6 border border-gray-100 hover:border-brand-blue/30 shadow-sm hover:shadow-lg transition-all duration-300 relative group/c5 cursor-pointer text-center flex flex-col items-center justify-center"
-                onMouseEnter={() => {
-                  if (typeof window !== 'undefined') {
-                    const el = document.getElementById('line-c5');
-                    if (el) el.style.display = 'block';
-                  }
-                }}
-                onMouseLeave={() => {
-                  if (typeof window !== 'undefined') {
-                    const el = document.getElementById('line-c5');
-                    if (el) el.style.display = 'none';
-                  }
-                }}
+                className={`rounded-3xl p-6 border transition-all duration-300 relative group/c5 cursor-pointer text-center flex flex-col items-center justify-center ${
+                  hoveredService === 4 ? 'bg-white border-brand-blue/30 shadow-lg' : 'bg-brand-light/40 border-gray-100 shadow-sm'
+                }`}
+                onMouseEnter={() => setHoveredService(4)}
+                onMouseLeave={() => setHoveredService(null)}
               >
                 <div className="flex items-center gap-3 mb-4 justify-center">
-                  <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-brand-blue/10 text-brand-blue group-hover/c5:bg-brand-blue group-hover/c5:text-white transition-all duration-300">
+                  <div className={`flex items-center justify-center w-10 h-10 rounded-xl transition-all duration-300 ${
+                    hoveredService === 4 ? 'bg-brand-blue text-white' : 'bg-brand-blue/10 text-brand-blue'
+                  }`}>
                     <Heart className="w-5 h-5" />
                   </div>
                   <span className="text-[10px] font-black text-brand-blue bg-brand-blue/5 px-2.5 py-0.5 rounded-full uppercase tracking-wider">Service 05</span>
