@@ -407,8 +407,8 @@ export default function Home() {
               </p>
             </div>
             <div className="shrink-0">
-              <a 
-                href="#services" 
+              <a
+                href="#services"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-blue hover:bg-brand-blue/90 text-white text-xs font-extrabold shadow-lg shadow-brand-blue/15 transition-all"
               >
                 <span>Explore Services</span>
@@ -422,20 +422,18 @@ export default function Home() {
             {/* Left Column: Interactive Swapper Cards */}
             <div className="lg:col-span-5 flex flex-col gap-4">
               {/* Option 1: Vision */}
-              <div 
+              <div
                 onClick={() => setAboutTab('vision')}
-                className={`p-6 rounded-3xl border transition-all duration-300 cursor-pointer text-left relative overflow-hidden group ${
-                  aboutTab === 'vision' 
-                    ? 'bg-white border-brand-blue/20 shadow-md shadow-brand-blue/5' 
-                    : 'bg-transparent border-transparent hover:bg-white/50 hover:border-gray-200'
-                }`}
+                className={`p-6 rounded-3xl border transition-all duration-300 cursor-pointer text-left relative overflow-hidden group ${aboutTab === 'vision'
+                  ? 'bg-white border-brand-blue/20 shadow-md shadow-brand-blue/5'
+                  : 'bg-transparent border-transparent hover:bg-white/50 hover:border-gray-200'
+                  }`}
               >
                 <div className="flex items-center gap-4">
-                  <div className={`flex items-center justify-center w-12 h-12 rounded-2xl transition-all duration-300 ${
-                    aboutTab === 'vision' 
-                      ? 'bg-brand-blue text-white shadow-md shadow-brand-blue/15' 
-                      : 'bg-brand-blue/10 text-brand-blue group-hover:bg-brand-blue group-hover:text-white'
-                  }`}>
+                  <div className={`flex items-center justify-center w-12 h-12 rounded-2xl transition-all duration-300 ${aboutTab === 'vision'
+                    ? 'bg-brand-blue text-white shadow-md shadow-brand-blue/15'
+                    : 'bg-brand-blue/10 text-brand-blue group-hover:bg-brand-blue group-hover:text-white'
+                    }`}>
                     <Eye className="w-5 h-5" />
                   </div>
                   <div>
@@ -443,11 +441,10 @@ export default function Home() {
                     <p className="text-[10px] font-bold text-gray-400 mt-0.5">To Lead Global Employment Solutions</p>
                   </div>
                 </div>
-                
+
                 {/* Expandable description block */}
-                <div className={`grid transition-all duration-500 ease-in-out ${
-                  aboutTab === 'vision' ? 'grid-rows-[1fr] opacity-100 mt-4' : 'grid-rows-[0fr] opacity-0 pointer-events-none'
-                }`}>
+                <div className={`grid transition-all duration-500 ease-in-out ${aboutTab === 'vision' ? 'grid-rows-[1fr] opacity-100 mt-4' : 'grid-rows-[0fr] opacity-0 pointer-events-none'
+                  }`}>
                   <div className="overflow-hidden">
                     <p className="text-[11px] text-gray-500 font-semibold leading-relaxed pl-16">
                       To become a leading force in global employment solutions, empowering individuals and contributing to workforce development through integrity, innovation, and excellence.
@@ -457,20 +454,18 @@ export default function Home() {
               </div>
 
               {/* Option 2: Mission */}
-              <div 
+              <div
                 onClick={() => setAboutTab('mission')}
-                className={`p-6 rounded-3xl border transition-all duration-300 cursor-pointer text-left relative overflow-hidden group ${
-                  aboutTab === 'mission' 
-                    ? 'bg-white border-brand-blue/20 shadow-md shadow-brand-blue/5' 
-                    : 'bg-transparent border-transparent hover:bg-white/50 hover:border-gray-200'
-                }`}
+                className={`p-6 rounded-3xl border transition-all duration-300 cursor-pointer text-left relative overflow-hidden group ${aboutTab === 'mission'
+                  ? 'bg-white border-brand-blue/20 shadow-md shadow-brand-blue/5'
+                  : 'bg-transparent border-transparent hover:bg-white/50 hover:border-gray-200'
+                  }`}
               >
                 <div className="flex items-center gap-4">
-                  <div className={`flex items-center justify-center w-12 h-12 rounded-2xl transition-all duration-300 ${
-                    aboutTab === 'mission' 
-                      ? 'bg-brand-blue text-white shadow-md shadow-brand-blue/15' 
-                      : 'bg-brand-blue/10 text-brand-blue group-hover:bg-brand-blue group-hover:text-white'
-                  }`}>
+                  <div className={`flex items-center justify-center w-12 h-12 rounded-2xl transition-all duration-300 ${aboutTab === 'mission'
+                    ? 'bg-brand-blue text-white shadow-md shadow-brand-blue/15'
+                    : 'bg-brand-blue/10 text-brand-blue group-hover:bg-brand-blue group-hover:text-white'
+                    }`}>
                     <Target className="w-5 h-5" />
                   </div>
                   <div>
@@ -478,11 +473,10 @@ export default function Home() {
                     <p className="text-[10px] font-bold text-gray-400 mt-0.5">Empowerment & Reliable Vetting</p>
                   </div>
                 </div>
-                
+
                 {/* Expandable description block */}
-                <div className={`grid transition-all duration-500 ease-in-out ${
-                  aboutTab === 'mission' ? 'grid-rows-[1fr] opacity-100 mt-4' : 'grid-rows-[0fr] opacity-0 pointer-events-none'
-                }`}>
+                <div className={`grid transition-all duration-500 ease-in-out ${aboutTab === 'mission' ? 'grid-rows-[1fr] opacity-100 mt-4' : 'grid-rows-[0fr] opacity-0 pointer-events-none'
+                  }`}>
                   <div className="overflow-hidden">
                     <p className="text-[11px] text-gray-500 font-semibold leading-relaxed pl-16">
                       To deliver reliable, ethical recruitment and transparent placement solutions by bridging the gap between local talent and global demand through rigorous vocational training.
@@ -498,11 +492,10 @@ export default function Home() {
               <div className="relative rounded-[32px] overflow-hidden border border-gray-200/60 shadow-xl bg-white p-2.5 md:p-3 aspect-[4/3] w-full">
                 <div className="relative w-full h-full rounded-[22px] overflow-hidden bg-brand-light">
                   {/* Vision Image */}
-                  <div className={`absolute inset-0 transition-all duration-700 ease-in-out ${
-                    aboutTab === 'vision' ? 'opacity-100 scale-100 rotate-0' : 'opacity-0 scale-95 -rotate-1 pointer-events-none'
-                  }`}>
+                  <div className={`absolute inset-0 transition-all duration-700 ease-in-out ${aboutTab === 'vision' ? 'opacity-100 scale-100 rotate-0' : 'opacity-0 scale-95 -rotate-1 pointer-events-none'
+                    }`}>
                     <Image
-                      src="/office.jpeg"
+                      src="/Seats.jpeg"
                       alt="RS Agency Global Strategy"
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
@@ -512,11 +505,10 @@ export default function Home() {
                   </div>
 
                   {/* Mission Image */}
-                  <div className={`absolute inset-0 transition-all duration-700 ease-in-out ${
-                    aboutTab === 'mission' ? 'opacity-100 scale-100 rotate-0' : 'opacity-0 scale-95 rotate-1 pointer-events-none'
-                  }`}>
+                  <div className={`absolute inset-0 transition-all duration-700 ease-in-out ${aboutTab === 'mission' ? 'opacity-100 scale-100 rotate-0' : 'opacity-0 scale-95 rotate-1 pointer-events-none'
+                    }`}>
                     <Image
-                      src="/vocational_training_center.png"
+                      src="/Candidates.png"
                       alt="RS Agency Vocational Training Center"
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
@@ -556,7 +548,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 py-6 [perspective:1000px] items-center">
             {coreValues.map((value, idx) => {
               const IconComp = value.icon;
-              
+
               // Consistent brand-blue gradient color used for all icons (as used in card 2)
               const gradientColor = 'from-blue-400 to-indigo-600 shadow-blue-500/10';
 
@@ -1062,80 +1054,78 @@ export default function Home() {
 
           {/* Concentric SWOT-style Diagram container */}
           <div className="relative min-h-[580px] flex flex-col items-center justify-center">
-            
+
             {/* SVG Connecting Lines (desktop lg viewport only) */}
             <svg className="absolute inset-0 w-full h-full pointer-events-none z-0 hidden lg:block" viewBox="0 0 1200 600" fill="none">
-              
+
               {/* Lines from left cards to circle */}
               {/* Card 1 (Top Left) to circle */}
               <path d="M 380 140 L 440 140 L 510 200" stroke="#E2E8F0" strokeWidth="2" />
-              <path 
-                d="M 380 140 L 440 140 L 510 200" 
-                stroke="#2563eb" 
-                strokeWidth="2" 
-                className={`animate-dash-pulse transition-opacity duration-300 ${hoveredService === 0 ? 'opacity-100' : 'opacity-0'}`} 
+              <path
+                d="M 380 140 L 440 140 L 510 200"
+                stroke="#2563eb"
+                strokeWidth="2"
+                className={`animate-dash-pulse transition-opacity duration-300 ${hoveredService === 0 ? 'opacity-100' : 'opacity-0'}`}
               />
               <circle cx="510" cy="200" r="5.5" fill="#3b82f6" stroke="white" strokeWidth="1.5" />
 
               {/* Card 2 (Bottom Left) to circle */}
               <path d="M 380 380 L 440 380 L 510 320" stroke="#E2E8F0" strokeWidth="2" />
-              <path 
-                d="M 380 380 L 440 380 L 510 320" 
-                stroke="#2563eb" 
-                strokeWidth="2" 
-                className={`animate-dash-pulse transition-opacity duration-300 ${hoveredService === 1 ? 'opacity-100' : 'opacity-0'}`} 
+              <path
+                d="M 380 380 L 440 380 L 510 320"
+                stroke="#2563eb"
+                strokeWidth="2"
+                className={`animate-dash-pulse transition-opacity duration-300 ${hoveredService === 1 ? 'opacity-100' : 'opacity-0'}`}
               />
               <circle cx="510" cy="320" r="5.5" fill="#3b82f6" stroke="white" strokeWidth="1.5" />
 
               {/* Lines from right cards to circle */}
               {/* Card 3 (Top Right) to circle */}
               <path d="M 820 140 L 760 140 L 690 200" stroke="#E2E8F0" strokeWidth="2" />
-              <path 
-                d="M 820 140 L 760 140 L 690 200" 
-                stroke="#2563eb" 
-                strokeWidth="2" 
-                className={`animate-dash-pulse transition-opacity duration-300 ${hoveredService === 2 ? 'opacity-100' : 'opacity-0'}`} 
+              <path
+                d="M 820 140 L 760 140 L 690 200"
+                stroke="#2563eb"
+                strokeWidth="2"
+                className={`animate-dash-pulse transition-opacity duration-300 ${hoveredService === 2 ? 'opacity-100' : 'opacity-0'}`}
               />
               <circle cx="690" cy="200" r="5.5" fill="#3b82f6" stroke="white" strokeWidth="1.5" />
 
               {/* Card 4 (Bottom Right) to circle */}
               <path d="M 820 380 L 760 380 L 690 320" stroke="#E2E8F0" strokeWidth="2" />
-              <path 
-                d="M 820 380 L 760 380 L 690 320" 
-                stroke="#2563eb" 
-                strokeWidth="2" 
-                className={`animate-dash-pulse transition-opacity duration-300 ${hoveredService === 3 ? 'opacity-100' : 'opacity-0'}`} 
+              <path
+                d="M 820 380 L 760 380 L 690 320"
+                stroke="#2563eb"
+                strokeWidth="2"
+                className={`animate-dash-pulse transition-opacity duration-300 ${hoveredService === 3 ? 'opacity-100' : 'opacity-0'}`}
               />
               <circle cx="690" cy="320" r="5.5" fill="#3b82f6" stroke="white" strokeWidth="1.5" />
 
               {/* Card 5 (Bottom Center) to circle */}
               <path d="M 600 480 L 600 375" stroke="#E2E8F0" strokeWidth="2" />
-              <path 
-                d="M 600 480 L 600 375" 
-                stroke="#2563eb" 
-                strokeWidth="2" 
-                className={`animate-dash-pulse transition-opacity duration-300 ${hoveredService === 4 ? 'opacity-100' : 'opacity-0'}`} 
+              <path
+                d="M 600 480 L 600 375"
+                stroke="#2563eb"
+                strokeWidth="2"
+                className={`animate-dash-pulse transition-opacity duration-300 ${hoveredService === 4 ? 'opacity-100' : 'opacity-0'}`}
               />
               <circle cx="600" cy="375" r="5.5" fill="#3b82f6" stroke="white" strokeWidth="1.5" />
             </svg>
 
             {/* Layout Grid wrapping 3 columns on desktop */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center w-full relative z-10">
-              
+
               {/* Left Column: Services 1 & 2 */}
               <div className="lg:col-span-4 flex flex-col gap-12 lg:pr-8">
                 {/* Service 1 */}
-                <div 
-                  className={`rounded-3xl p-6 border transition-all duration-300 relative group/c1 cursor-pointer ${
-                    hoveredService === 0 ? 'bg-white border-brand-blue/30 shadow-lg' : 'bg-brand-light/40 border-gray-100 shadow-sm'
-                  }`}
+                <div
+                  className={`rounded-3xl p-6 border transition-all duration-300 relative group/c1 cursor-pointer ${hoveredService === 0 ? 'bg-white border-brand-blue/30 shadow-lg' : 'bg-brand-light/40 border-gray-100 shadow-sm'
+                    }`}
                   onMouseEnter={() => setHoveredService(0)}
                   onMouseLeave={() => setHoveredService(null)}
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <div className={`flex items-center justify-center w-10 h-10 rounded-xl transition-all duration-300 ${
-                      hoveredService === 0 ? 'bg-brand-blue text-white' : 'bg-brand-blue/10 text-brand-blue'
-                    }`}>
+                    <div className={`flex items-center justify-center w-10 h-10 rounded-xl transition-all duration-300 ${hoveredService === 0 ? 'bg-brand-blue text-white' : 'bg-brand-blue/10 text-brand-blue'
+                      }`}>
                       <Megaphone className="w-5 h-5" />
                     </div>
                     <span className="text-[10px] font-black text-brand-blue bg-brand-blue/5 px-2.5 py-0.5 rounded-full uppercase tracking-wider">Service 01</span>
@@ -1149,17 +1139,15 @@ export default function Home() {
                 </div>
 
                 {/* Service 2 */}
-                <div 
-                  className={`rounded-3xl p-6 border transition-all duration-300 relative group/c2 cursor-pointer ${
-                    hoveredService === 1 ? 'bg-white border-brand-blue/30 shadow-lg' : 'bg-brand-light/40 border-gray-100 shadow-sm'
-                  }`}
+                <div
+                  className={`rounded-3xl p-6 border transition-all duration-300 relative group/c2 cursor-pointer ${hoveredService === 1 ? 'bg-white border-brand-blue/30 shadow-lg' : 'bg-brand-light/40 border-gray-100 shadow-sm'
+                    }`}
                   onMouseEnter={() => setHoveredService(1)}
                   onMouseLeave={() => setHoveredService(null)}
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <div className={`flex items-center justify-center w-10 h-10 rounded-xl transition-all duration-300 ${
-                      hoveredService === 1 ? 'bg-brand-blue text-white' : 'bg-brand-blue/10 text-brand-blue'
-                    }`}>
+                    <div className={`flex items-center justify-center w-10 h-10 rounded-xl transition-all duration-300 ${hoveredService === 1 ? 'bg-brand-blue text-white' : 'bg-brand-blue/10 text-brand-blue'
+                      }`}>
                       <Users className="w-5 h-5" />
                     </div>
                     <span className="text-[10px] font-black text-brand-blue bg-brand-blue/5 px-2.5 py-0.5 rounded-full uppercase tracking-wider">Service 02</span>
@@ -1183,7 +1171,7 @@ export default function Home() {
                   {/* Glowing waves */}
                   <div className="absolute inset-0 rounded-full border border-brand-blue/20 animate-ping pointer-events-none duration-1000 z-0"></div>
                   <div className="absolute -inset-4 rounded-full border border-brand-cyan/15 animate-pulse pointer-events-none z-0"></div>
-                  
+
                   {/* Concentric inner circle */}
                   <div className="absolute inset-4 rounded-full border border-white/10 flex items-center justify-center bg-white/[0.04] z-10">
                     <div className="text-center p-4">
@@ -1197,17 +1185,15 @@ export default function Home() {
               {/* Right Column: Services 3 & 4 */}
               <div className="lg:col-span-4 flex flex-col gap-12 lg:pl-8">
                 {/* Service 3 */}
-                <div 
-                  className={`rounded-3xl p-6 border transition-all duration-300 relative group/c3 cursor-pointer ${
-                    hoveredService === 2 ? 'bg-white border-brand-blue/30 shadow-lg' : 'bg-brand-light/40 border-gray-100 shadow-sm'
-                  }`}
+                <div
+                  className={`rounded-3xl p-6 border transition-all duration-300 relative group/c3 cursor-pointer ${hoveredService === 2 ? 'bg-white border-brand-blue/30 shadow-lg' : 'bg-brand-light/40 border-gray-100 shadow-sm'
+                    }`}
                   onMouseEnter={() => setHoveredService(2)}
                   onMouseLeave={() => setHoveredService(null)}
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <div className={`flex items-center justify-center w-10 h-10 rounded-xl transition-all duration-300 ${
-                      hoveredService === 2 ? 'bg-brand-blue text-white' : 'bg-brand-blue/10 text-brand-blue'
-                    }`}>
+                    <div className={`flex items-center justify-center w-10 h-10 rounded-xl transition-all duration-300 ${hoveredService === 2 ? 'bg-brand-blue text-white' : 'bg-brand-blue/10 text-brand-blue'
+                      }`}>
                       <ClipboardCheck className="w-5 h-5" />
                     </div>
                     <span className="text-[10px] font-black text-brand-blue bg-brand-blue/5 px-2.5 py-0.5 rounded-full uppercase tracking-wider">Service 03</span>
@@ -1221,17 +1207,15 @@ export default function Home() {
                 </div>
 
                 {/* Service 4 */}
-                <div 
-                  className={`rounded-3xl p-6 border transition-all duration-300 relative group/c4 cursor-pointer ${
-                    hoveredService === 3 ? 'bg-white border-brand-blue/30 shadow-lg' : 'bg-brand-light/40 border-gray-100 shadow-sm'
-                  }`}
+                <div
+                  className={`rounded-3xl p-6 border transition-all duration-300 relative group/c4 cursor-pointer ${hoveredService === 3 ? 'bg-white border-brand-blue/30 shadow-lg' : 'bg-brand-light/40 border-gray-100 shadow-sm'
+                    }`}
                   onMouseEnter={() => setHoveredService(3)}
                   onMouseLeave={() => setHoveredService(null)}
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <div className={`flex items-center justify-center w-10 h-10 rounded-xl transition-all duration-300 ${
-                      hoveredService === 3 ? 'bg-brand-blue text-white' : 'bg-brand-blue/10 text-brand-blue'
-                    }`}>
+                    <div className={`flex items-center justify-center w-10 h-10 rounded-xl transition-all duration-300 ${hoveredService === 3 ? 'bg-brand-blue text-white' : 'bg-brand-blue/10 text-brand-blue'
+                      }`}>
                       <Database className="w-5 h-5" />
                     </div>
                     <span className="text-[10px] font-black text-brand-blue bg-brand-blue/5 px-2.5 py-0.5 rounded-full uppercase tracking-wider">Service 04</span>
@@ -1249,17 +1233,15 @@ export default function Home() {
 
             {/* Bottom Row: Service 5 centered */}
             <div className="w-full max-w-lg mt-12 relative z-10">
-              <div 
-                className={`rounded-3xl p-6 border transition-all duration-300 relative group/c5 cursor-pointer text-center flex flex-col items-center justify-center ${
-                  hoveredService === 4 ? 'bg-white border-brand-blue/30 shadow-lg' : 'bg-brand-light/40 border-gray-100 shadow-sm'
-                }`}
+              <div
+                className={`rounded-3xl p-6 border transition-all duration-300 relative group/c5 cursor-pointer text-center flex flex-col items-center justify-center ${hoveredService === 4 ? 'bg-white border-brand-blue/30 shadow-lg' : 'bg-brand-light/40 border-gray-100 shadow-sm'
+                  }`}
                 onMouseEnter={() => setHoveredService(4)}
                 onMouseLeave={() => setHoveredService(null)}
               >
                 <div className="flex items-center gap-3 mb-4 justify-center">
-                  <div className={`flex items-center justify-center w-10 h-10 rounded-xl transition-all duration-300 ${
-                    hoveredService === 4 ? 'bg-brand-blue text-white' : 'bg-brand-blue/10 text-brand-blue'
-                  }`}>
+                  <div className={`flex items-center justify-center w-10 h-10 rounded-xl transition-all duration-300 ${hoveredService === 4 ? 'bg-brand-blue text-white' : 'bg-brand-blue/10 text-brand-blue'
+                    }`}>
                     <Heart className="w-5 h-5" />
                   </div>
                   <span className="text-[10px] font-black text-brand-blue bg-brand-blue/5 px-2.5 py-0.5 rounded-full uppercase tracking-wider">Service 05</span>
@@ -1435,7 +1417,7 @@ export default function Home() {
             <div className="lg:col-span-7 relative rounded-3xl overflow-hidden min-h-[400px] lg:min-h-auto border border-gray-200/50 shadow-md group hover:shadow-xl transition-all duration-300">
               {/* Office Image */}
               <Image
-                src="/office.jpeg"
+                src="/Training.png"
                 alt="RS Agency Main Office"
                 fill
                 sizes="(max-width: 1024px) 100vw, 60vw"
