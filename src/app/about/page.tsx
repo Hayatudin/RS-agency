@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { Users, Award, ShieldCheck, HeartHandshake, Sparkles, TrendingUp, CheckCircle2 } from 'lucide-react';
+import { Users, Award, ShieldCheck, HeartHandshake, Sparkles, TrendingUp, CheckCircle2, Eye, Target } from 'lucide-react';
 
 export default function AboutPage() {
   const [aboutTab, setAboutTab] = useState<'vision' | 'mission'>('vision');
@@ -68,97 +68,123 @@ export default function AboutPage() {
         </div>
 
         {/* Narrative & Image Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-          {/* Left Content Column */}
-          <div className="lg:col-span-6 space-y-6">
-            <h2 className="text-3xl font-extrabold text-brand-dark leading-tight">
-              Empowering Talents, <br />
-              Connecting Opportunities Globally
-            </h2>
-            <p className="text-sm text-gray-600 leading-relaxed font-medium">
-              RS Foreign Employment Agent is a trusted recruitment agency dedicated to connecting skilled individuals with international employment opportunities. With a strong commitment to ethical practices and client satisfaction, we proudly operate alongside our sister companies — <strong>DAERA Foreign Employment Agent</strong>, <strong>Cool Staff Foreign Employment Agent</strong>, and <strong>Ethio-Arab Training Center</strong>— to provide comprehensive support across recruitment, training, and travel services.
-            </p>
-            <p className="text-sm text-gray-600 leading-relaxed font-medium">
-              Our combined ecosystem ensures that every candidate placed meets high standards of professionalism and compliance, while protecting job seekers and providing employers with verified talent.
-            </p>
-
-            {/* Vision & Mission Tabs */}
-            <div className="mt-8 border border-gray-200/80 rounded-2xl overflow-hidden bg-white shadow-sm">
-              <div className="flex border-b border-gray-100">
-                <button
-                  onClick={() => setAboutTab('vision')}
-                  className={`flex-1 py-4 text-sm font-bold transition-colors ${
-                    aboutTab === 'vision'
-                      ? 'bg-brand-blue/5 text-brand-blue border-b-2 border-brand-blue'
-                      : 'text-gray-500 hover:text-brand-blue hover:bg-gray-50'
-                  }`}
-                >
-                  Our Vision
-                </button>
-                <button
-                  onClick={() => setAboutTab('mission')}
-                  className={`flex-1 py-4 text-sm font-bold transition-colors ${
-                    aboutTab === 'mission'
-                      ? 'bg-brand-blue/5 text-brand-blue border-b-2 border-brand-blue'
-                      : 'text-gray-500 hover:text-brand-blue hover:bg-gray-50'
-                  }`}
-                >
-                  Our Mission
-                </button>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          {/* Left Column: Interactive Swapper Cards */}
+          <div className="lg:col-span-5 flex flex-col gap-4">
+            {/* Option 1: Vision */}
+            <div 
+              onClick={() => setAboutTab('vision')}
+              className={`p-6 rounded-3xl border transition-all duration-300 cursor-pointer text-left relative overflow-hidden group ${
+                aboutTab === 'vision' 
+                  ? 'bg-white border-brand-blue/20 shadow-md shadow-brand-blue/5' 
+                  : 'bg-transparent border-transparent hover:bg-white/50 hover:border-gray-200'
+              }`}
+            >
+              <div className="flex items-center gap-4">
+                <div className={`flex items-center justify-center w-12 h-12 rounded-2xl transition-all duration-300 ${
+                  aboutTab === 'vision' 
+                    ? 'bg-brand-blue text-white shadow-md shadow-brand-blue/15' 
+                    : 'bg-brand-blue/10 text-brand-blue group-hover:bg-brand-blue group-hover:text-white'
+                }`}>
+                  <Eye className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="font-extrabold text-sm text-brand-dark transition-colors group-hover:text-brand-blue">Our Vision</h3>
+                  <p className="text-[10px] font-bold text-gray-400 mt-0.5">To Lead Global Employment Solutions</p>
+                </div>
               </div>
-              <div className="p-6 min-h-[170px]">
-                {aboutTab === 'vision' ? (
-                  <div className="space-y-3">
-                    <h4 className="font-bold text-brand-dark text-base">To Lead Global Employment Solutions</h4>
-                    <p className="text-sm text-gray-600 leading-relaxed font-medium">
-                      To become a leading force in global employment solutions, empowering individuals and contributing to workforce development through integrity, innovation, and excellence.
-                    </p>
-                  </div>
-                ) : (
-                  <div className="space-y-4">
-                    <ul className="space-y-2.5 text-sm text-gray-600 font-medium">
-                      <li className="flex items-start gap-2.5">
-                        <CheckCircle2 className="w-4 h-4 text-brand-blue shrink-0 mt-0.5" />
-                        <span>To deliver reliable and transparent recruitment services tailored to the needs of both employers and job seekers.</span>
-                      </li>
-                      <li className="flex items-start gap-2.5">
-                        <CheckCircle2 className="w-4 h-4 text-brand-blue shrink-0 mt-0.5" />
-                        <span>To bridge the gap between global opportunities and local talent by providing rigorous training and seamless travel support.</span>
-                      </li>
-                      <li className="flex items-start gap-2.5">
-                        <CheckCircle2 className="w-4 h-4 text-brand-blue shrink-0 mt-0.5" />
-                        <span>To maintain the highest standards of ethics, compliance, and professional integrity in every placement.</span>
-                      </li>
-                    </ul>
-                  </div>
-                )}
+              
+              {/* Expandable description block */}
+              <div className={`grid transition-all duration-500 ease-in-out ${
+                aboutTab === 'vision' ? 'grid-rows-[1fr] opacity-100 mt-4' : 'grid-rows-[0fr] opacity-0 pointer-events-none'
+              }`}>
+                <div className="overflow-hidden">
+                  <p className="text-[11px] text-gray-500 font-semibold leading-relaxed pl-16">
+                    To become a leading force in global employment solutions, empowering individuals and contributing to workforce development through integrity, innovation, and excellence.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Option 2: Mission */}
+            <div 
+              onClick={() => setAboutTab('mission')}
+              className={`p-6 rounded-3xl border transition-all duration-300 cursor-pointer text-left relative overflow-hidden group ${
+                aboutTab === 'mission' 
+                  ? 'bg-white border-brand-blue/20 shadow-md shadow-brand-blue/5' 
+                  : 'bg-transparent border-transparent hover:bg-white/50 hover:border-gray-200'
+              }`}
+            >
+              <div className="flex items-center gap-4">
+                <div className={`flex items-center justify-center w-12 h-12 rounded-2xl transition-all duration-300 ${
+                  aboutTab === 'mission' 
+                    ? 'bg-brand-blue text-white shadow-md shadow-brand-blue/15' 
+                    : 'bg-brand-blue/10 text-brand-blue group-hover:bg-brand-blue group-hover:text-white'
+                }`}>
+                  <Target className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="font-extrabold text-sm text-brand-dark transition-colors group-hover:text-brand-blue">Our Mission</h3>
+                  <p className="text-[10px] font-bold text-gray-400 mt-0.5">Empowerment & Reliable Vetting</p>
+                </div>
+              </div>
+              
+              {/* Expandable description block */}
+              <div className={`grid transition-all duration-500 ease-in-out ${
+                aboutTab === 'mission' ? 'grid-rows-[1fr] opacity-100 mt-4' : 'grid-rows-[0fr] opacity-0 pointer-events-none'
+              }`}>
+                <div className="overflow-hidden">
+                  <p className="text-[11px] text-gray-500 font-semibold leading-relaxed pl-16">
+                    To deliver reliable, ethical recruitment and transparent placement solutions by bridging the gap between local talent and global demand through rigorous vocational training.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Right Image Column */}
-          <div className="lg:col-span-6 relative">
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] bg-white p-2">
-              <div className="relative w-full h-full rounded-2xl overflow-hidden">
-                <Image
-                  src="/vocational_training_center.png"
-                  alt="RS Agency Training Center in Ethiopia"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  style={{ objectFit: 'cover' }}
-                  priority
-                />
+          {/* Right Column: Premium Mockup screen with fluid animations */}
+          <div className="lg:col-span-7 relative">
+            {/* Outer screen frame (mockup card style) */}
+            <div className="relative rounded-[32px] overflow-hidden border border-gray-200/60 shadow-xl bg-white p-2.5 md:p-3 aspect-[4/3] w-full">
+              <div className="relative w-full h-full rounded-[22px] overflow-hidden bg-brand-light">
+                {/* Vision Image */}
+                <div className={`absolute inset-0 transition-all duration-700 ease-in-out ${
+                  aboutTab === 'vision' ? 'opacity-100 scale-100 rotate-0' : 'opacity-0 scale-95 -rotate-1 pointer-events-none'
+                }`}>
+                  <Image
+                    src="/office.jpeg"
+                    alt="RS Agency Global Strategy"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    style={{ objectFit: 'cover' }}
+                    className="transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
+
+                {/* Mission Image */}
+                <div className={`absolute inset-0 transition-all duration-700 ease-in-out ${
+                  aboutTab === 'mission' ? 'opacity-100 scale-100 rotate-0' : 'opacity-0 scale-95 rotate-1 pointer-events-none'
+                }`}>
+                  <Image
+                    src="/vocational_training_center.png"
+                    alt="RS Agency Vocational Training Center"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    style={{ objectFit: 'cover' }}
+                    className="transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
               </div>
             </div>
 
-            {/* Experience badge */}
-            <div className="absolute -bottom-6 -left-6 bg-white/90 backdrop-blur-md p-5 rounded-2xl shadow-xl border border-gray-150 max-w-[200px] flex items-center gap-3">
-              <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-brand-blue text-white shrink-0">
-                <Award className="w-6 h-6" />
+            {/* Floating Certification Card Overlay */}
+            <div className="absolute -bottom-6 -left-6 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-gray-100 max-w-[210px] flex items-center gap-3 animate-float z-20">
+              <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-brand-blue text-white shrink-0 shadow-md shadow-brand-blue/15">
+                <Award className="w-5 h-5" />
               </div>
               <div>
-                <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Certified By</p>
-                <p className="text-xs font-extrabold text-brand-dark">Ministry of Labor & Skills</p>
+                <p className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Certified By</p>
+                <p className="text-[11px] font-black text-brand-dark leading-tight">Ministry of Labor & Skills</p>
               </div>
             </div>
           </div>

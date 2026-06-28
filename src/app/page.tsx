@@ -31,7 +31,9 @@ import {
   Truck,
   Utensils,
   ShoppingBag,
-  Laptop
+  Laptop,
+  Eye,
+  Target
 } from 'lucide-react';
 
 function AnimatedCounter({ target, suffix = '', duration = 2000 }: { target: number; suffix?: string; duration?: number }) {
@@ -388,95 +390,151 @@ export default function Home() {
       </section>
 
       {/* SECTION 3: ABOUT US */}
-      <section id="about" className="py-24 bg-gradient-soft relative">
+      <section id="about" className="py-24 bg-gradient-soft relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-            {/* Left Content Column */}
-            <div className="lg:col-span-6 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-blue/5 border border-brand-blue/15 text-brand-blue text-sm font-semibold">
-                <Users className="w-4 h-4 text-brand-cyan" />
+          {/* Header block with title & action */}
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-gray-200/60 mb-12">
+            <div className="space-y-4 max-w-3xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-blue/5 border border-brand-blue/15 text-brand-blue text-xs font-semibold">
+                <Users className="w-3.5 h-3.5 text-brand-cyan" />
                 <span>About Our Agency</span>
               </div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-brand-dark leading-tight">
-                Empowering Talents, <br />
-                <span className="text-gradient">Connecting Opportunities</span> Globally
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-brand-dark tracking-tight leading-none">
+                Empowering Talents, <span className="text-gradient">Connecting Opportunities</span> Globally
               </h2>
-              <p className="text-base text-gray-600 leading-relaxed font-medium">
-                RS Foreign Employment Agent is a trusted recruitment agency dedicated to connecting skilled individuals with international employment opportunities. With a strong commitment to ethical practices and client satisfaction, we proudly operate alongside our sister companies — DAERA Foreign Employment Agent, Cool staff FOREIGN Employment Agent, and Ethio-Arab training center— to provide comprehensive support across recruitment, training, and travel services.
+              <p className="text-xs sm:text-sm text-gray-500 font-semibold leading-relaxed">
+                RS Foreign Employment Agent is a premier recruitment partner connecting skilled professionals with global employers. Alongside our sister agencies and certified training centers, we manage the complete lifecycle of international placement with absolute transparency.
               </p>
+            </div>
+            <div className="shrink-0">
+              <a 
+                href="#services" 
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-blue hover:bg-brand-blue/90 text-white text-xs font-extrabold shadow-lg shadow-brand-blue/15 transition-all"
+              >
+                <span>Explore Services</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </a>
+            </div>
+          </div>
 
-              {/* Vision & Mission Tabs */}
-              <div className="mt-8 border border-gray-200/80 rounded-2xl overflow-hidden bg-white shadow-sm">
-                <div className="flex border-b border-gray-100">
-                  <button
-                    onClick={() => setAboutTab('vision')}
-                    className={`flex-1 py-4 text-sm font-bold transition-colors ${aboutTab === 'vision'
-                      ? 'bg-brand-blue/5 text-brand-blue border-b-2 border-brand-blue'
-                      : 'text-gray-500 hover:text-brand-blue hover:bg-gray-50'
-                      }`}
-                  >
-                    Our Vision
-                  </button>
-                  <button
-                    onClick={() => setAboutTab('mission')}
-                    className={`flex-1 py-4 text-sm font-bold transition-colors ${aboutTab === 'mission'
-                      ? 'bg-brand-blue/5 text-brand-blue border-b-2 border-brand-blue'
-                      : 'text-gray-500 hover:text-brand-blue hover:bg-gray-50'
-                      }`}
-                  >
-                    Our Mission
-                  </button>
+          {/* Interactive Feature Swapper */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            {/* Left Column: Interactive Swapper Cards */}
+            <div className="lg:col-span-5 flex flex-col gap-4">
+              {/* Option 1: Vision */}
+              <div 
+                onClick={() => setAboutTab('vision')}
+                className={`p-6 rounded-3xl border transition-all duration-300 cursor-pointer text-left relative overflow-hidden group ${
+                  aboutTab === 'vision' 
+                    ? 'bg-white border-brand-blue/20 shadow-md shadow-brand-blue/5' 
+                    : 'bg-transparent border-transparent hover:bg-white/50 hover:border-gray-200'
+                }`}
+              >
+                <div className="flex items-center gap-4">
+                  <div className={`flex items-center justify-center w-12 h-12 rounded-2xl transition-all duration-300 ${
+                    aboutTab === 'vision' 
+                      ? 'bg-brand-blue text-white shadow-md shadow-brand-blue/15' 
+                      : 'bg-brand-blue/10 text-brand-blue group-hover:bg-brand-blue group-hover:text-white'
+                  }`}>
+                    <Eye className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-extrabold text-sm text-brand-dark transition-colors group-hover:text-brand-blue">Our Vision</h3>
+                    <p className="text-[10px] font-bold text-gray-400 mt-0.5">To Lead Global Employment Solutions</p>
+                  </div>
                 </div>
-                <div className="p-6 min-h-[170px]">
-                  {aboutTab === 'vision' ? (
-                    <div className="space-y-3 animate-fade-in">
-                      <h4 className="font-bold text-brand-dark text-base">To Lead Global Employment Solutions</h4>
-                      <p className="text-sm text-gray-600 leading-relaxed font-medium">
-                        To become a leading force in global employment solutions, empowering individuals and contributing to workforce development through integrity, innovation, and excellence.
-                      </p>
-                    </div>
-                  ) : (
-                    <div className="space-y-4 animate-fade-in">
-                      <ul className="space-y-2.5 text-sm text-gray-600 font-medium">
-                        <li className="flex items-start gap-2.5">
-                          <CheckCircle2 className="w-4 h-4 text-brand-blue shrink-0 mt-0.5" />
-                          <span>To deliver reliable and transparent recruitment services tailored to the needs of both employers and job seekers.</span>
-                        </li>
-                        <li className="flex items-start gap-2.5">
-                          <CheckCircle2 className="w-4 h-4 text-brand-blue shrink-0 mt-0.5" />
-                          <span>To bridge the gap between global opportunities and local talent by providing rigorous training and seamless travel support.</span>
-                        </li>
-                        <li className="flex items-start gap-2.5">
-                          <CheckCircle2 className="w-4 h-4 text-brand-blue shrink-0 mt-0.5" />
-                          <span>To maintain the highest standards of ethics, compliance, and professional integrity in every placement.</span>
-                        </li>
-                      </ul>
-                    </div>
-                  )}
+                
+                {/* Expandable description block */}
+                <div className={`grid transition-all duration-500 ease-in-out ${
+                  aboutTab === 'vision' ? 'grid-rows-[1fr] opacity-100 mt-4' : 'grid-rows-[0fr] opacity-0 pointer-events-none'
+                }`}>
+                  <div className="overflow-hidden">
+                    <p className="text-[11px] text-gray-500 font-semibold leading-relaxed pl-16">
+                      To become a leading force in global employment solutions, empowering individuals and contributing to workforce development through integrity, innovation, and excellence.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Option 2: Mission */}
+              <div 
+                onClick={() => setAboutTab('mission')}
+                className={`p-6 rounded-3xl border transition-all duration-300 cursor-pointer text-left relative overflow-hidden group ${
+                  aboutTab === 'mission' 
+                    ? 'bg-white border-brand-blue/20 shadow-md shadow-brand-blue/5' 
+                    : 'bg-transparent border-transparent hover:bg-white/50 hover:border-gray-200'
+                }`}
+              >
+                <div className="flex items-center gap-4">
+                  <div className={`flex items-center justify-center w-12 h-12 rounded-2xl transition-all duration-300 ${
+                    aboutTab === 'mission' 
+                      ? 'bg-brand-blue text-white shadow-md shadow-brand-blue/15' 
+                      : 'bg-brand-blue/10 text-brand-blue group-hover:bg-brand-blue group-hover:text-white'
+                  }`}>
+                    <Target className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-extrabold text-sm text-brand-dark transition-colors group-hover:text-brand-blue">Our Mission</h3>
+                    <p className="text-[10px] font-bold text-gray-400 mt-0.5">Empowerment & Reliable Vetting</p>
+                  </div>
+                </div>
+                
+                {/* Expandable description block */}
+                <div className={`grid transition-all duration-500 ease-in-out ${
+                  aboutTab === 'mission' ? 'grid-rows-[1fr] opacity-100 mt-4' : 'grid-rows-[0fr] opacity-0 pointer-events-none'
+                }`}>
+                  <div className="overflow-hidden">
+                    <p className="text-[11px] text-gray-500 font-semibold leading-relaxed pl-16">
+                      To deliver reliable, ethical recruitment and transparent placement solutions by bridging the gap between local talent and global demand through rigorous vocational training.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Right Photo Column */}
-            <div className="lg:col-span-6 relative">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] border-4 border-white bg-white">
-                <Image
-                  src="/vocational_training_center.png"
-                  alt="RS Agency Training Center in Ethiopia"
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  style={{ objectFit: 'cover' }}
-                />
+            {/* Right Column: Premium Mockup screen with fluid animations */}
+            <div className="lg:col-span-7 relative">
+              {/* Outer screen frame (mockup card style) */}
+              <div className="relative rounded-[32px] overflow-hidden border border-gray-200/60 shadow-xl bg-white p-2.5 md:p-3 aspect-[4/3] w-full">
+                <div className="relative w-full h-full rounded-[22px] overflow-hidden bg-brand-light">
+                  {/* Vision Image */}
+                  <div className={`absolute inset-0 transition-all duration-700 ease-in-out ${
+                    aboutTab === 'vision' ? 'opacity-100 scale-100 rotate-0' : 'opacity-0 scale-95 -rotate-1 pointer-events-none'
+                  }`}>
+                    <Image
+                      src="/office.jpeg"
+                      alt="RS Agency Global Strategy"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      style={{ objectFit: 'cover' }}
+                      className="transition-transform duration-700 hover:scale-105"
+                    />
+                  </div>
+
+                  {/* Mission Image */}
+                  <div className={`absolute inset-0 transition-all duration-700 ease-in-out ${
+                    aboutTab === 'mission' ? 'opacity-100 scale-100 rotate-0' : 'opacity-0 scale-95 rotate-1 pointer-events-none'
+                  }`}>
+                    <Image
+                      src="/vocational_training_center.png"
+                      alt="RS Agency Vocational Training Center"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      style={{ objectFit: 'cover' }}
+                      className="transition-transform duration-700 hover:scale-105"
+                    />
+                  </div>
+                </div>
               </div>
 
-              {/* Experience badge */}
-              <div className="absolute -bottom-6 -left-6 liquid-glass p-5 rounded-2xl shadow-xl border border-white/50 max-w-[200px] flex items-center gap-3">
-                <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-brand-blue text-white shrink-0">
-                  <Award className="w-6 h-6" />
+              {/* Floating Certification Card Overlay */}
+              <div className="absolute -bottom-6 -left-6 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-gray-100 max-w-[210px] flex items-center gap-3 animate-float z-20">
+                <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-brand-blue text-white shrink-0 shadow-md shadow-brand-blue/15">
+                  <Award className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Certified By</p>
-                  <p className="text-xs font-extrabold text-brand-dark">Ministry of Labor & Skills</p>
+                  <p className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Certified By</p>
+                  <p className="text-[11px] font-black text-brand-dark leading-tight">Ministry of Labor & Skills</p>
                 </div>
               </div>
             </div>
@@ -545,69 +603,204 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 5: WHY CHOOSE RS */}
-      <section id="why-choose-us" className="py-24 bg-brand-light relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-            {/* Left Reasons list */}
-            <div className="lg:col-span-6 space-y-8">
-              <div className="space-y-4">
-                <span className="badge">Operational Strength</span>
-                <h2 className="text-3xl sm:text-4xl font-extrabold text-brand-dark">Why Choose RS Agency?</h2>
-                <p className="text-base text-gray-500 font-medium">
-                  We stand out by maintaining highly structured processing models, ensuring seamless coordination, and protecting candidate interests.
-                </p>
-              </div>
+      {/* SECTION 5: OPERATIONAL STRENGTH (WHY CHOOSE RS) */}
+      <section id="why-choose-us" className="py-24 bg-brand-light relative overflow-hidden">
+        {/* Ambient background glows */}
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-brand-blue/5 rounded-full blur-[120px] pointer-events-none z-0"></div>
 
-              <div className="space-y-4">
-                {whyChooseUs.map((item, idx) => {
-                  const IconComp = item.icon;
-                  return (
-                    <div key={item.title} className="flex gap-4 p-4 rounded-xl bg-white border border-gray-100/50 shadow-sm hover:border-brand-blue/15 transition-all duration-300">
-                      <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-brand-blue/5 text-brand-blue shrink-0">
-                        <IconComp className="w-5 h-5 animate-pulse" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Header block matching Spais layout */}
+          <div className="text-center space-y-4 mb-16">
+            <span className="badge uppercase tracking-wider text-brand-blue bg-brand-blue/5 border border-brand-blue/15 px-4 py-1.5 rounded-full text-xs font-bold inline-block">
+              Operational Strength
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-brand-dark tracking-tight">
+              Why Choose RS Agency?
+            </h2>
+            <p className="text-sm sm:text-base text-gray-500 max-w-2xl mx-auto font-medium leading-relaxed">
+              We stand out by maintaining highly structured processing models, ensuring seamless coordination, and protecting candidate interests.
+            </p>
+          </div>
+
+          {/* 5-Card Layout matching Spais layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch w-full">
+            {/* CARD 1: Government Certified (Top Left wide card - col-span-6) */}
+            <div className="lg:col-span-6 rounded-3xl border border-gray-100 bg-white p-8 hover:shadow-xl hover:border-brand-blue/20 transition-all duration-300 flex flex-col justify-between group cursor-pointer">
+              {/* Graphic */}
+              <div className="relative h-44 flex items-center justify-center bg-brand-light/50 rounded-2xl border border-gray-50/50 overflow-hidden mb-6 group-hover:bg-brand-blue/[0.02] transition-colors duration-300">
+                <div className="absolute inset-0 bg-gradient-to-br from-brand-blue/5 to-brand-cyan/5"></div>
+                {/* Certificate Mockup Frame */}
+                <div className="relative w-48 h-28 bg-white rounded-xl shadow-lg border border-gray-100 p-3.5 flex flex-col justify-between transform group-hover:scale-105 transition-transform duration-500">
+                  <div className="space-y-2">
+                    <div className="h-2 w-16 bg-brand-blue/20 rounded"></div>
+                    <div className="h-1.5 w-32 bg-gray-100 rounded"></div>
+                    <div className="h-1.5 w-24 bg-gray-100 rounded"></div>
+                  </div>
+                  <div className="flex items-center justify-between mt-4 border-t border-gray-50 pt-2">
+                    <div className="flex items-center gap-1.5">
+                      <div className="w-5 h-5 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue">
+                        <Award className="w-3 h-3" />
                       </div>
-                      <div>
-                        <h4 className="font-extrabold text-brand-dark text-sm">{item.title}</h4>
-                        <p className="text-xs text-gray-500 leading-relaxed mt-0.5 font-medium">{item.description}</p>
-                      </div>
+                      <span className="text-[6.5px] font-black text-brand-blue tracking-widest uppercase">LICENSED AGENCY</span>
                     </div>
-                  );
-                })}
+                    {/* Pulsing seal */}
+                    <div className="w-5 h-5 rounded-full bg-brand-cyan/20 flex items-center justify-center relative">
+                      <div className="absolute inset-0 rounded-full bg-brand-cyan/35 animate-ping"></div>
+                      <div className="w-3.5 h-3.5 rounded-full bg-brand-cyan flex items-center justify-center text-brand-dark font-black text-[6px]">✓</div>
+                    </div>
+                  </div>
+                </div>
+                {/* Ministry badge floating */}
+                <div className="absolute bottom-4 right-4 px-2 py-1 rounded-lg bg-brand-dark text-white text-[7px] font-bold shadow-md transform translate-y-1 group-hover:translate-y-0 transition-transform duration-500">
+                  100% COMPLIANT
+                </div>
+              </div>
+              {/* Content */}
+              <div>
+                <h3 className="text-lg font-extrabold text-brand-dark group-hover:text-brand-blue transition-colors duration-300 mb-2">
+                  {whyChooseUs[0].title}
+                </h3>
+                <p className="text-xs text-gray-500 font-semibold leading-relaxed">
+                  {whyChooseUs[0].description}
+                </p>
               </div>
             </div>
 
-            {/* Right Dual Commitment cards */}
-            <div className="lg:col-span-6 space-y-8 lg:sticky lg:top-28">
-              <div className="p-8 rounded-2xl bg-white border border-gray-100/50 shadow-md">
-                <h3 className="text-xl font-extrabold text-brand-dark mb-6 flex items-center gap-2">
-                  <CheckCircle2 className="w-6 h-6 text-brand-blue" />
-                  Our Dual Commitment
+            {/* CARD 2: Proven Experience (Top Right wide card - col-span-6) */}
+            <div className="lg:col-span-6 rounded-3xl border border-gray-100 bg-white p-8 hover:shadow-xl hover:border-brand-blue/20 transition-all duration-300 flex flex-col justify-between group cursor-pointer">
+              {/* Graphic */}
+              <div className="relative h-44 flex items-center justify-center bg-brand-light/50 rounded-2xl border border-gray-50/50 overflow-hidden mb-6 group-hover:bg-brand-blue/[0.02] transition-colors duration-300">
+                <div className="absolute inset-0 bg-gradient-to-br from-brand-blue/5 to-brand-cyan/5"></div>
+                {/* Center circuit hub */}
+                <div className="relative w-12 h-12 rounded-2xl bg-brand-blue text-white flex items-center justify-center shadow-lg shadow-brand-blue/15 z-10 animate-pulse">
+                  <Globe className="w-5 h-5" />
+                </div>
+                {/* Concentric path connections */}
+                <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 350 176">
+                  <path d="M 175 88 L 100 50" stroke="#93c5fd" strokeWidth="1.5" strokeDasharray="3 3" className="animate-dash-pulse opacity-60" />
+                  <path d="M 175 88 L 275 50" stroke="#93c5fd" strokeWidth="1.5" strokeDasharray="3 3" className="animate-dash-pulse opacity-60" />
+                  <path d="M 175 88 L 100 120" stroke="#93c5fd" strokeWidth="1.5" strokeDasharray="3 3" className="animate-dash-pulse opacity-60" />
+                  <path d="M 175 88 L 275 120" stroke="#93c5fd" strokeWidth="1.5" strokeDasharray="3 3" className="animate-dash-pulse opacity-60" />
+                </svg>
+                {/* Floating nodes */}
+                <div className="absolute top-8 left-16 bg-white shadow p-1.5 rounded-lg border border-gray-100/50 flex items-center gap-1 transform group-hover:scale-105 transition-all">
+                  <span className="text-[7px] font-black text-brand-dark">ROMANIA</span>
+                </div>
+                <div className="absolute top-8 right-16 bg-white shadow p-1.5 rounded-lg border border-gray-100/50 flex items-center gap-1 transform group-hover:scale-105 transition-all">
+                  <span className="text-[7px] font-black text-brand-dark">MIDDLE EAST</span>
+                </div>
+                <div className="absolute bottom-8 left-16 bg-white shadow p-1.5 rounded-lg border border-gray-100/50 flex items-center gap-1 transform group-hover:scale-105 transition-all">
+                  <span className="text-[7px] font-black text-brand-dark">VOCATIONAL</span>
+                </div>
+                <div className="absolute bottom-8 right-16 bg-white shadow p-1.5 rounded-lg border border-gray-100/50 flex items-center gap-1 transform group-hover:scale-105 transition-all">
+                  <span className="text-[7px] font-black text-brand-dark">SISTER NETWORKS</span>
+                </div>
+              </div>
+              {/* Content */}
+              <div>
+                <h3 className="text-lg font-extrabold text-brand-dark group-hover:text-brand-blue transition-colors duration-300 mb-2">
+                  {whyChooseUs[1].title}
                 </h3>
+                <p className="text-xs text-gray-500 font-semibold leading-relaxed">
+                  {whyChooseUs[1].description}
+                </p>
+              </div>
+            </div>
 
-                <div className="space-y-6">
-                  {/* Employer Commitment */}
-                  <div className="p-6 rounded-xl bg-gradient-to-br from-brand-blue to-brand-blue/90 text-white shadow-lg shadow-brand-blue/25 hover:shadow-brand-blue/35 transition-all">
-                    <div className="flex items-center justify-between mb-3">
-                      <h4 className="font-bold text-base tracking-wide uppercase">For Employers</h4>
-                      <ArrowUpRight className="w-5 h-5 text-brand-cyan" />
-                    </div>
-                    <p className="text-xs text-white/90 leading-relaxed font-medium">
-                      We provide qualified, well-trained professionals tailored to your industry standards. Our recruitment, training, and language certifications guarantee that candidates are ready to deliver value from day one.
-                    </p>
+            {/* CARD 3: Large Database (Bottom Left card - col-span-4) */}
+            <div className="lg:col-span-4 rounded-3xl border border-gray-100 bg-white p-6 hover:shadow-xl hover:border-brand-blue/20 transition-all duration-300 flex flex-col justify-between group cursor-pointer">
+              {/* Graphic */}
+              <div className="relative h-36 flex items-center justify-center bg-brand-light/50 rounded-2xl border border-gray-50/50 overflow-hidden mb-4 group-hover:bg-brand-blue/[0.02] transition-colors duration-300">
+                <div className="absolute inset-0 bg-gradient-to-br from-brand-blue/5 to-brand-cyan/5"></div>
+                {/* Keyboard Shortcut frame */}
+                <div className="bg-white rounded-xl shadow-md p-3.5 border border-gray-100 flex flex-col items-center gap-2.5 w-36 transform group-hover:scale-105 transition-transform duration-500">
+                  <div className="flex gap-1.5">
+                    <kbd className="px-2 py-1 rounded bg-gray-50 border border-gray-200 text-[8px] font-black text-brand-dark shadow-sm">Ctrl</kbd>
+                    <span className="text-[8px] font-bold text-gray-400 mt-0.5">+</span>
+                    <kbd className="px-2 py-1 rounded bg-gray-50 border border-gray-200 text-[8px] font-black text-brand-dark shadow-sm">K</kbd>
                   </div>
-
-                  {/* Job Seeker Commitment */}
-                  <div className="p-6 rounded-xl bg-white border border-gray-100/50 shadow-sm hover:border-brand-blue/20 transition-all">
-                    <div className="flex items-center justify-between mb-3">
-                      <h4 className="font-bold text-brand-dark text-base tracking-wide uppercase">For Job Seekers</h4>
-                      <ArrowUpRight className="w-5 h-5 text-brand-blue" />
-                    </div>
-                    <p className="text-xs text-gray-500 leading-relaxed font-medium">
-                      We secure reliable, rewarding international placements with full pre- and post-departure support. We guide you through visa processing, language preparation, and contract validation so you can pursue global goals safely.
-                    </p>
+                  <div className="h-5 w-28 rounded bg-brand-light border border-gray-100 flex items-center px-1.5">
+                    <span className="text-[7px] text-gray-400 font-bold">Search 15k+ pool...</span>
                   </div>
                 </div>
+              </div>
+              {/* Content */}
+              <div>
+                <h3 className="text-sm font-extrabold text-brand-dark group-hover:text-brand-blue transition-colors duration-300 mb-1.5">
+                  {whyChooseUs[2].title}
+                </h3>
+                <p className="text-[11px] text-gray-500 font-semibold leading-relaxed">
+                  {whyChooseUs[2].description}
+                </p>
+              </div>
+            </div>
+
+            {/* CARD 4: Fast Processing (Bottom Center card - col-span-4) */}
+            <div className="lg:col-span-4 rounded-3xl border border-gray-100 bg-white p-6 hover:shadow-xl hover:border-brand-blue/20 transition-all duration-300 flex flex-col justify-between group cursor-pointer">
+              {/* Graphic */}
+              <div className="relative h-36 flex items-center justify-center bg-brand-light/50 rounded-2xl border border-gray-50/50 overflow-hidden mb-4 group-hover:bg-brand-blue/[0.02] transition-colors duration-300">
+                <div className="absolute inset-0 bg-gradient-to-br from-brand-blue/5 to-brand-cyan/5"></div>
+                {/* Workspace List Mockup */}
+                <div className="bg-white rounded-xl shadow-md p-3 border border-gray-100 flex flex-col gap-2 w-36 transform group-hover:scale-105 transition-transform duration-500">
+                  <div className="flex items-center gap-1 border-b border-gray-50 pb-1">
+                    <div className="w-1 h-1 rounded-full bg-brand-blue"></div>
+                    <span className="text-[6.5px] font-black text-brand-dark uppercase tracking-wider">Musaned Status</span>
+                  </div>
+                  <div className="space-y-1">
+                    <div className="flex items-center justify-between text-[6.5px] text-gray-500 font-bold bg-brand-blue/5 px-1.5 py-0.5 rounded">
+                      <span>01 Vetting CV</span>
+                      <span className="text-[5.5px] text-brand-blue font-black">Done</span>
+                    </div>
+                    <div className="flex items-center justify-between text-[6.5px] text-gray-500 font-bold bg-brand-blue/5 px-1.5 py-0.5 rounded animate-pulse">
+                      <span>02 Medical Check</span>
+                      <span className="text-[5.5px] text-brand-cyan font-black">Active</span>
+                    </div>
+                    <div className="flex items-center justify-between text-[6.5px] text-gray-400 font-semibold px-1.5 py-0.5">
+                      <span>03 Embassy Setup</span>
+                      <span>Pending</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* Content */}
+              <div>
+                <h3 className="text-sm font-extrabold text-brand-dark group-hover:text-brand-blue transition-colors duration-300 mb-1.5">
+                  {whyChooseUs[3].title}
+                </h3>
+                <p className="text-[11px] text-gray-500 font-semibold leading-relaxed">
+                  {whyChooseUs[3].description}
+                </p>
+              </div>
+            </div>
+
+            {/* CARD 5: Ethical Operations (Bottom Right card - col-span-4) */}
+            <div className="lg:col-span-4 rounded-3xl border border-gray-100 bg-white p-6 hover:shadow-xl hover:border-brand-blue/20 transition-all duration-300 flex flex-col justify-between group cursor-pointer">
+              {/* Graphic */}
+              <div className="relative h-36 flex items-center justify-center bg-brand-light/50 rounded-2xl border border-gray-50/50 overflow-hidden mb-4 group-hover:bg-brand-blue/[0.02] transition-colors duration-300">
+                <div className="absolute inset-0 bg-gradient-to-br from-brand-blue/5 to-brand-cyan/5"></div>
+                {/* Collaboration nodes */}
+                <div className="relative w-32 h-20 flex items-center justify-center transform group-hover:scale-105 transition-transform duration-500">
+                  <div className="w-8 h-8 rounded-full bg-brand-blue text-white flex items-center justify-center shadow-lg shadow-brand-blue/15 text-[10px] font-black z-10">RS</div>
+                  <div className="absolute top-0 left-4 w-5 h-5 rounded-full bg-white shadow border border-gray-100 flex items-center justify-center text-[6.5px] font-black text-gray-600">CO</div>
+                  <div className="absolute bottom-0 left-6 w-5 h-5 rounded-full bg-white shadow border border-gray-100 flex items-center justify-center text-[6.5px] font-black text-gray-600">DE</div>
+                  <div className="absolute top-1 right-5 w-5 h-5 rounded-full bg-white shadow border border-gray-100 flex items-center justify-center text-[6.5px] font-black text-gray-600">TR</div>
+                  <div className="absolute bottom-1 right-8 w-5 h-5 rounded-full bg-white shadow border border-gray-100 flex items-center justify-center text-[6.5px] font-black text-gray-600">PA</div>
+                  <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 128 80">
+                    <line x1="64" y1="40" x2="26" y2="15" stroke="#bfdbfe" strokeWidth="1" />
+                    <line x1="64" y1="40" x2="36" y2="70" stroke="#bfdbfe" strokeWidth="1" />
+                    <line x1="64" y1="40" x2="102" y2="18" stroke="#bfdbfe" strokeWidth="1" />
+                    <line x1="64" y1="40" x2="84" y2="72" stroke="#bfdbfe" strokeWidth="1" />
+                  </svg>
+                </div>
+              </div>
+              {/* Content */}
+              <div>
+                <h3 className="text-sm font-extrabold text-brand-dark group-hover:text-brand-blue transition-colors duration-300 mb-1.5">
+                  {whyChooseUs[4].title}
+                </h3>
+                <p className="text-[11px] text-gray-500 font-semibold leading-relaxed">
+                  {whyChooseUs[4].description}
+                </p>
               </div>
             </div>
           </div>
