@@ -1475,7 +1475,7 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <h3 className="text-5xl font-black tracking-tight mb-2">50,000+</h3>
+                  <h3 className="text-4xl font-black tracking-tight mb-2">Verified</h3>
                   <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Pre-vetted active profiles</p>
                 </div>
               </div>
@@ -1489,8 +1489,8 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <h3 className="text-5xl font-black tracking-tight mb-2">10+</h3>
-                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Deployments Completed</p>
+                  <h3 className="text-4xl font-black tracking-tight mb-2">Active</h3>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider">System Partnerships</p>
                 </div>
               </div>
             </div>
@@ -1520,8 +1520,8 @@ export default function Home() {
               <p className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-gray-400">Portal Integration</p>
             </div>
             <div className="p-6 rounded-2xl bg-white/5 border border-white/10 text-center hover:bg-white/10 transition-colors">
-              <span className="block text-4xl sm:text-5xl font-black text-brand-cyan mb-2">1</span>
-              <p className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-gray-400">Sister Companies</p>
+              <span className="block text-4xl sm:text-5xl font-black text-brand-cyan mb-2">Active</span>
+              <p className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-gray-400">Sister Networks</p>
             </div>
             <div className="p-6 rounded-2xl bg-white/5 border border-white/10 text-center hover:bg-white/10 transition-colors">
               <span className="block text-4xl sm:text-5xl font-black text-brand-cyan mb-2">7</span>
