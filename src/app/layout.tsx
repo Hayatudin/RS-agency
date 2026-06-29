@@ -16,6 +16,10 @@ export const metadata: Metadata = {
   description: 'RS Foreign Employment Agency connects skilled individuals with international employment opportunities. Operating with DAERA, Cool Staff, and certified training facilities to deliver premier recruitment, training, and travel solutions.',
   keywords: 'recruitment agency, foreign employment, Ethiopia, job placement, international jobs, travel services, vocational training, RS Foreign Employment, DAERA, Cool Staff, certified training facilities',
   authors: [{ name: 'RS Foreign Employment Agency PLC' }],
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function RootLayout({
