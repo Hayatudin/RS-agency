@@ -52,7 +52,7 @@ export default function LegalPage() {
       <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-brand-cyan/5 rounded-full blur-[100px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto relative z-10 space-y-20">
-        
+
         {/* Header Section */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-gray-200/60">
           <div className="space-y-4 max-w-2xl">
@@ -83,7 +83,7 @@ export default function LegalPage() {
             <p className="text-sm text-gray-600 leading-relaxed font-medium">
               Our operations are fully coordinated with municipal authorities, labor offices, and ministries to ensure compliance with the latest regulations, ensuring zero deployment interruptions.
             </p>
-            
+
             <div className="pt-2">
               <a
                 href="/contact"
@@ -107,7 +107,7 @@ export default function LegalPage() {
             </div>
 
             {/* Overlapping document thumbnail: Ministry Certificate */}
-            <div 
+            <div
               onClick={() => setSelectedDoc('/Certificate.png')}
               className="col-span-6 bg-white p-3 rounded-2xl border border-gray-200/60 shadow-sm hover:shadow-md hover:scale-[1.02] cursor-pointer transition-all duration-300 flex flex-col gap-2 group"
             >
@@ -127,7 +127,7 @@ export default function LegalPage() {
             </div>
 
             {/* Middle Big Card: signing table image block */}
-            <div 
+            <div
               onClick={() => setSelectedDoc('/Doc1.png')}
               className="col-span-8 bg-white p-3 rounded-2xl border border-gray-200/60 shadow-sm hover:shadow-md hover:scale-[1.02] cursor-pointer transition-all duration-300 flex flex-col gap-2 group"
             >
@@ -161,7 +161,7 @@ export default function LegalPage() {
         <div className="py-8 border-y border-gray-200/60 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
           <div className="space-y-1">
             <p className="text-3xl font-black text-brand-dark">Certified</p>
-            <p className="text-xs text-gray-500 font-semibold uppercase tracking-wider">Ethio-Arab Training Facility</p>
+            <p className="text-xs text-gray-500 font-semibold uppercase tracking-wider">From Ministry of Labor and Skill</p>
           </div>
           <div className="space-y-1 border-y md:border-y-0 md:border-x border-gray-200/60 py-4 md:py-0">
             <p className="text-3xl font-black text-brand-blue">100%</p>
@@ -193,7 +193,7 @@ export default function LegalPage() {
             <p className="text-xs text-gray-400 font-semibold -mt-2">Official landscape credentials authorizing international operations.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {landscapeDocuments.map((doc) => (
-                <div 
+                <div
                   key={doc.id}
                   onClick={() => setSelectedDoc(doc.image)}
                   className="bg-white rounded-3xl p-5 border border-gray-200/60 shadow-sm hover:shadow-xl cursor-pointer transition-all duration-300 flex flex-col justify-between group min-h-[340px]"
@@ -252,7 +252,7 @@ export default function LegalPage() {
             <p className="text-xs text-gray-400 font-semibold -mt-2">Official portrait page scans outlining standard corporate registration details.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {portraitDocuments.map((doc) => (
-                <div 
+                <div
                   key={doc.id}
                   onClick={() => setSelectedDoc(doc.image)}
                   className="bg-white rounded-3xl p-5 border border-gray-200/60 shadow-sm hover:shadow-xl cursor-pointer transition-all duration-300 flex flex-col justify-between group min-h-[380px]"
@@ -308,11 +308,11 @@ export default function LegalPage() {
 
       {/* FULL-SCREEN INTERACTIVE MODAL */}
       {selectedDoc && (
-        <div 
+        <div
           className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-md flex items-center justify-center p-4 animate-fade-in pointer-events-auto"
           onClick={() => setSelectedDoc(null)}
         >
-          <div 
+          <div
             className="relative bg-white rounded-3xl p-3 max-w-2xl w-full max-h-[85vh] flex flex-col shadow-2xl animate-scale-up border border-white/20"
             onClick={(e) => e.stopPropagation()}
           >
@@ -324,7 +324,7 @@ export default function LegalPage() {
                   {selectedDoc.split('/').pop()?.split('.')[0] || 'Official Document'}
                 </span>
               </div>
-              <button 
+              <button
                 onClick={() => setSelectedDoc(null)}
                 className="p-1.5 rounded-full bg-slate-100 hover:bg-slate-200 text-gray-500 transition-colors"
               >
@@ -348,15 +348,15 @@ export default function LegalPage() {
 
             {/* Modal Actions */}
             <div className="flex items-center justify-end gap-3 pt-3 px-3 border-t border-gray-100">
-              <a 
-                href={selectedDoc} 
+              <a
+                href={selectedDoc}
                 download
                 className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-brand-blue hover:bg-brand-blue/90 text-white font-bold text-xs transition-colors"
               >
                 <Download className="w-3.5 h-3.5" />
                 Download Document
               </a>
-              <button 
+              <button
                 onClick={() => setSelectedDoc(null)}
                 className="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-gray-700 font-bold text-xs transition-colors"
               >

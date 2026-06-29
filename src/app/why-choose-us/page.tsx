@@ -313,7 +313,7 @@ export default function WhyChooseUsPage() {
             <div>
               <h4 className="font-extrabold text-sm text-brand-dark uppercase">Vocational Training Integration</h4>
               <p className="text-xs text-gray-500 font-semibold mt-0.5 leading-relaxed">
-                Every candidate is pre-qualified in these sectors via our Ethio-Arab vocational facilities. Handlers, truck drivers, construction workers, and cooks undergo tailored industry orientation and safety certifications before final departure.
+                Every candidate is pre-qualified in these sectors via our certified vocational training facilities. Handlers, truck drivers, construction workers, and cooks undergo tailored industry orientation and safety certifications before final departure.
               </p>
             </div>
           </div>

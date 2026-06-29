@@ -13,8 +13,8 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: 'RS Foreign Employment Agency | Global Recruitment & Training',
-  description: 'RS Foreign Employment Agency connects skilled individuals with international employment opportunities. Operating with DAERA, Cool Staff, and Ethio-Arab training center to deliver premier recruitment, training, and travel solutions.',
-  keywords: 'recruitment agency, foreign employment, Ethiopia, job placement, international jobs, travel services, vocational training, RS Foreign Employment, DAERA, Cool Staff, Ethio-Arab',
+  description: 'RS Foreign Employment Agency connects skilled individuals with international employment opportunities. Operating with DAERA, Cool Staff, and certified training facilities to deliver premier recruitment, training, and travel solutions.',
+  keywords: 'recruitment agency, foreign employment, Ethiopia, job placement, international jobs, travel services, vocational training, RS Foreign Employment, DAERA, Cool Staff, certified training facilities',
   authors: [{ name: 'RS Foreign Employment Agency PLC' }],
 };
 

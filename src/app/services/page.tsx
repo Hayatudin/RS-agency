@@ -44,7 +44,7 @@ export default function ServicesPage() {
     {
       title: 'Vocational Training & Language Vetting',
       icon: Globe,
-      description: 'Candidates receive language training and safety orientation through our Ethio-Arab vocational facilities to hit the ground running.'
+      description: 'Candidates receive language training and safety orientation through our certified vocational training facilities to hit the ground running.'
     },
     {
       title: 'Logistics & Departure Coordination',
