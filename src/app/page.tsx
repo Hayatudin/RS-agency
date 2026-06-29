@@ -125,24 +125,24 @@ export default function Home() {
       description: 'Fully licensed and compliant with all local and international labor regulations.'
     },
     {
-      title: 'Proven Experience',
+      title: 'Market Alignment',
       icon: Briefcase,
-      description: 'Years of successful placements across diverse sectors globally.'
+      description: 'Tailored candidate grooming aligned directly with employer specifications.'
     },
     {
-      title: 'Large Database',
+      title: 'Growing Database',
       icon: Layers,
-      description: 'A vast network of pre-screened, qualified candidates ready for deployment.'
+      description: 'A structured pool of pre-screened, qualified candidates undergoing preparation.'
     },
     {
       title: 'Fast Processing',
       icon: Zap,
-      description: 'Efficient workflows that minimize time-to-hire and deployment delays.'
+      description: 'Direct digital portals enabling rapid contract and document verification.'
     },
     {
       title: 'Ethical Operations',
       icon: Scale,
-      description: 'Transparency first—no hidden fees, ethical recruitment practices.'
+      description: 'Transparency first—no hidden fees, strict adherence to legal standards.'
     }
   ];
 
@@ -264,7 +264,7 @@ export default function Home() {
                     <span>Bole Dembel, Addis Ababa</span>
                   </div>
                   <p className="text-white/80 text-sm leading-relaxed font-medium italic">
-                    &ldquo;A professional agency that handled my placement and travel support with complete transparency.&rdquo;
+                    &ldquo;A premier agency providing highly transparent and compliant recruitment pathways for Ethiopian talent.&rdquo;
                   </p>
                   <div className="flex items-center gap-3 pt-2 border-t border-white/10">
                     <div className="w-9 h-9 rounded-full bg-brand-blue/30 flex items-center justify-center text-white text-xs font-bold">
@@ -302,7 +302,7 @@ export default function Home() {
                 <span className="text-gradient">DAERA Foreign Employment</span>
               </h2>
               <p className="text-base text-gray-600 leading-relaxed font-medium max-w-xl">
-                We proudly operate alongside our sister company — DAERA Foreign Employment Agent — to provide comprehensive support across recruitment, training, and travel services. Together, we form a unified force delivering ethical, compliant, and world-class employment solutions.
+                We proudly operate alongside our sister company DAERA Foreign Employment Agent to provide comprehensive support across recruitment, training, and travel services. Together, we form a unified force delivering ethical, compliant, and world-class employment solutions.
               </p>
 
               {/* Partnership Highlights */}
@@ -365,12 +365,12 @@ export default function Home() {
                   </p>
                   <div className="flex items-center gap-6 pt-4 border-t border-white/15">
                     <div>
-                      <span className="text-2xl font-black text-brand-cyan">10K+</span>
-                      <p className="text-[10px] font-semibold text-white/60 uppercase tracking-wider">Placements</p>
+                      <span className="text-2xl font-black text-brand-cyan">100%</span>
+                      <p className="text-[10px] font-semibold text-white/60 uppercase tracking-wider">Certified</p>
                     </div>
                     <div>
-                      <span className="text-2xl font-black text-brand-cyan">5+</span>
-                      <p className="text-[10px] font-semibold text-white/60 uppercase tracking-wider">Countries</p>
+                      <span className="text-2xl font-black text-brand-cyan">Active</span>
+                      <p className="text-[10px] font-semibold text-white/60 uppercase tracking-wider">Network</p>
                     </div>
                     <div>
                       <span className="text-2xl font-black text-brand-cyan">100%</span>
@@ -508,7 +508,7 @@ export default function Home() {
                   <div className={`absolute inset-0 transition-all duration-700 ease-in-out ${aboutTab === 'mission' ? 'opacity-100 scale-100 rotate-0' : 'opacity-0 scale-95 rotate-1 pointer-events-none'
                     }`}>
                     <Image
-                      src="/Candidates.png"
+                      src="/Training.png"
                       alt="RS Agency Vocational Training Center"
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
@@ -658,7 +658,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* CARD 2: Proven Experience (Top Right wide card - col-span-6) */}
+            {/* CARD 2: Market Alignment (Top Right wide card - col-span-6) */}
             <div className="lg:col-span-6 rounded-3xl border border-gray-100 bg-white p-8 hover:shadow-xl hover:border-brand-blue/20 transition-all duration-300 flex flex-col justify-between group cursor-pointer">
               {/* Graphic */}
               <div className="relative h-44 flex items-center justify-center bg-brand-light/50 rounded-2xl border border-gray-50/50 overflow-hidden mb-6 group-hover:bg-brand-blue/[0.02] transition-colors duration-300">
@@ -676,10 +676,10 @@ export default function Home() {
                 </svg>
                 {/* Floating nodes */}
                 <div className="absolute top-8 left-16 bg-white shadow p-1.5 rounded-lg border border-gray-100/50 flex items-center gap-1 transform group-hover:scale-105 transition-all">
-                  <span className="text-[7px] font-black text-brand-dark">ROMANIA</span>
+                  <span className="text-[7px] font-black text-brand-dark">EUROPE</span>
                 </div>
                 <div className="absolute top-8 right-16 bg-white shadow p-1.5 rounded-lg border border-gray-100/50 flex items-center gap-1 transform group-hover:scale-105 transition-all">
-                  <span className="text-[7px] font-black text-brand-dark">MIDDLE EAST</span>
+                  <span className="text-[7px] font-black text-brand-dark">WORLDWIDE</span>
                 </div>
                 <div className="absolute bottom-8 left-16 bg-white shadow p-1.5 rounded-lg border border-gray-100/50 flex items-center gap-1 transform group-hover:scale-105 transition-all">
                   <span className="text-[7px] font-black text-brand-dark">VOCATIONAL</span>
@@ -712,7 +712,7 @@ export default function Home() {
                     <kbd className="px-2 py-1 rounded bg-gray-50 border border-gray-200 text-[8px] font-black text-brand-dark shadow-sm">K</kbd>
                   </div>
                   <div className="h-5 w-28 rounded bg-brand-light border border-gray-100 flex items-center px-1.5">
-                    <span className="text-[7px] text-gray-400 font-bold">Search 15k+ pool...</span>
+                    <span className="text-[7px] text-gray-400 font-bold">Search candidate pool...</span>
                   </div>
                 </div>
               </div>
@@ -799,8 +799,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 5.5: ROMANIAN LABOR MARKET DEMAND */}
-      <section id="romania-demand" className="py-24 bg-white relative overflow-hidden border-b border-gray-100">
+      {/* SECTION 5.5: GLOBAL LABOR MARKET DEMAND */}
+      <section id="global-demand" className="py-24 bg-white relative overflow-hidden border-b border-gray-100">
         {/* Ambient glow backgrounds */}
         <div className="absolute top-1/3 left-1/4 w-[350px] h-[350px] bg-brand-blue/5 rounded-full blur-[100px] pointer-events-none"></div>
         <div className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] bg-brand-cyan/5 rounded-full blur-[120px] pointer-events-none"></div>
@@ -809,13 +809,13 @@ export default function Home() {
           {/* Header */}
           <div className="text-center space-y-4 mb-20">
             <span className="badge uppercase tracking-wider text-brand-blue bg-brand-blue/5 border border-brand-blue/15 px-4 py-1.5 rounded-full text-xs font-bold inline-flex items-center gap-1.5">
-              <Globe className="w-3.5 h-3.5" /> Romanian Labor Demand
+              <Globe className="w-3.5 h-3.5" /> Global Labor Demand
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-brand-dark tracking-tight">
-              Romanian Market Opportunities & Focus Areas
+              Global Market Opportunities & Focus Areas
             </h2>
             <p className="text-sm sm:text-base text-gray-500 max-w-2xl mx-auto font-medium leading-relaxed">
-              Romania is experiencing strong demand for both skilled and unskilled talent. We bridge these gaps by aligning Ethiopian professionals with key high-growth industries.
+              International markets are experiencing strong demand for both skilled and unskilled talent. We bridge these gaps by aligning Ethiopian professionals with key high-growth industries globally.
             </p>
           </div>
 
@@ -1417,8 +1417,8 @@ export default function Home() {
             <div className="lg:col-span-7 relative rounded-3xl overflow-hidden min-h-[400px] lg:min-h-auto border border-gray-200/50 shadow-md group hover:shadow-xl transition-all duration-300">
               {/* Office Image */}
               <Image
-                src="/Training.png"
-                alt="RS Agency Main Office"
+                src="/candidates.png"
+                alt="RS Agency Candidates Pool"
                 fill
                 sizes="(max-width: 1024px) 100vw, 60vw"
                 style={{ objectFit: 'cover' }}
@@ -1430,8 +1430,8 @@ export default function Home() {
               {/* Floating Graph Card */}
               <div className="absolute bottom-6 right-6 p-5 rounded-2xl bg-white/95 backdrop-blur-md shadow-xl border border-white/60 max-w-[240px] space-y-3 animate-float pointer-events-none">
                 <div>
-                  <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Placement success</p>
-                  <h4 className="text-xl font-black text-brand-dark">98.4% Rate</h4>
+                  <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Vetting accuracy</p>
+                  <h4 className="text-xl font-black text-brand-dark">100% Rate</h4>
                 </div>
                 {/* SVG Graph */}
                 <div className="h-14 w-full flex items-end">

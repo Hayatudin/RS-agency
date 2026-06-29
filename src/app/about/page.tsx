@@ -62,7 +62,7 @@ export default function AboutPage() {
               Ministry Licensed
             </span>
             <span className="px-3.5 py-2 rounded-xl bg-white border border-gray-200 shadow-sm">
-              Global Placements
+              International Networks
             </span>
           </div>
         </div>
@@ -152,7 +152,7 @@ export default function AboutPage() {
                   aboutTab === 'vision' ? 'opacity-100 scale-100 rotate-0' : 'opacity-0 scale-95 -rotate-1 pointer-events-none'
                 }`}>
                   <Image
-                    src="/office.jpeg"
+                    src="/Seats.jpeg"
                     alt="RS Agency Global Strategy"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
@@ -166,7 +166,7 @@ export default function AboutPage() {
                   aboutTab === 'mission' ? 'opacity-100 scale-100 rotate-0' : 'opacity-0 scale-95 rotate-1 pointer-events-none'
                 }`}>
                   <Image
-                    src="/vocational_training_center.png"
+                    src="/Training.png"
                     alt="RS Agency Vocational Training Center"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"

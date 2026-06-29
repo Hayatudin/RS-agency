@@ -32,7 +32,7 @@ export default function WhyChooseUsPage() {
       circleSubtitle: 'Fully Cleared candidates',
       cards: [
         { title: '100% Medical Clearance', label: 'Zero Health Issues' },
-        { title: '5x Verification Standard', label: 'Biometric & fingerprint scans', highlight: true },
+        { title: 'Rigorous Vetting Standard', label: 'Biometric & fingerprint scans', highlight: true },
         { title: 'Embassy Approved Docs', label: 'Cleared for deployment' }
       ]
     },
@@ -44,7 +44,7 @@ export default function WhyChooseUsPage() {
       circleSubtitle: '100% Digital compliance',
       cards: [
         { title: 'Real-time Contract Uploads', label: 'Direct portal linking' },
-        { title: '5x Faster Processing Time', label: 'Accelerated through system', highlight: true },
+        { title: 'Direct Portal Uploads', label: 'Accelerated workflow systems', highlight: true },
         { title: 'IMIS System Approvals', label: 'Seamless government clearance' }
       ]
     },
@@ -56,7 +56,7 @@ export default function WhyChooseUsPage() {
       circleSubtitle: 'Full logistics coordination',
       cards: [
         { title: '4 Coordinated Agencies', label: 'Training, legal & travel' },
-        { title: '5x Seamless Deployment', label: 'Airport pickup & landing orientation', highlight: true },
+        { title: 'Structured Travel Logistics', label: 'Airport coordination & orientation', highlight: true },
         { title: 'Onsite Handover Coordination', label: 'Zero employer onboarding hassle' }
       ]
     }
@@ -256,17 +256,17 @@ export default function WhyChooseUsPage() {
           </div>
         </div>
 
-        {/* Romanian Labor Market Opportunities Section */}
+        {/* Global Labor Market Opportunities Section */}
         <div className="space-y-12 pt-6 border-t border-gray-200/40">
           <div className="text-center space-y-4 max-w-2xl mx-auto">
             <span className="badge uppercase tracking-wider text-brand-blue bg-brand-blue/5 border border-brand-blue/15 px-4 py-1.5 rounded-full text-xs font-bold inline-flex items-center gap-1.5">
-              <Globe className="w-3.5 h-3.5" /> Romanian Labor Demand
+              <Globe className="w-3.5 h-3.5" /> Global Labor Demand
             </span>
             <h2 className="text-3xl font-extrabold text-brand-dark tracking-tight">
-              Romanian Market Opportunities & Focus Areas
+              Global Market Opportunities & Focus Areas
             </h2>
             <p className="text-sm text-gray-500 font-semibold leading-relaxed">
-              Romania is experiencing strong demand for both skilled and unskilled talent. We bridge these gaps by aligning Ethiopian professionals with key high-growth industries.
+              International markets are experiencing strong demand for both skilled and unskilled talent. We bridge these gaps by aligning Ethiopian professionals with key high-growth industries globally.
             </p>
           </div>
 
@@ -298,7 +298,7 @@ export default function WhyChooseUsPage() {
                 </div>
 
                 <div className="pt-6 border-t border-gray-100 flex items-center justify-between text-[10px] font-extrabold text-brand-blue uppercase tracking-wider">
-                  <span>Romania Opportunity</span>
+                  <span>Global Opportunity</span>
                   <ArrowUpRight className="w-3.5 h-3.5 text-brand-cyan" />
                 </div>
               </div>
